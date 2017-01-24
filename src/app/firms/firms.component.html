@@ -1,0 +1,26 @@
+<!--<input [value]="filter" title="filter" (input)="filter = $event.target.value;" />-->
+<link rel="stylesheet" href="../app.component.css">
+
+<div class="form-inline">
+  <input [(ngModel)]="filter" title="filter" class="form-control"/>
+  <button class="btn btn-primary" (click)="resetFilter()">
+    clear
+  </button>
+</div>
+
+<table class="table">
+  <thead>
+    <th>Firm Name</th>
+    <th>Firm Number</th>
+    <th>Start date firm</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let firm of firms | filterPipe:filter">
+    <td>{{firm.firmName}}</td>
+    <td>{{firm.firmNumber}}</td>
+    <td>{{firm.startDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
