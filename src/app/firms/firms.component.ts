@@ -1,20 +1,19 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import  {Firm} from "./firm";
+import {FirmService} from "./firms.service";
 
 @Component({
     selector: 'app-firms',
     templateUrl: './firms.component.html',
+    providers: [FirmService],
     styleUrls: ['./firms.component.css']
 })
 export class FirmsComponent implements OnInit {
     firms: Firm[];
     @Input() filter: string = "";
 
-    constructor(private _router : Router) {
-        this.firms = [];
-        this.firms.push(new Firm('00000000001', 'the name of the firm 1'));
-        this.firms.push(new Firm('00000000002', 'the name of the firm 2'));
+    constructor(private _router : Router, private _firmService : FirmService) {
     }
 
     resetFilter() {
@@ -26,5 +25,7 @@ export class FirmsComponent implements OnInit {
     }
 
     ngOnInit() {
+      this._firmService.getFirms().subscribe(firms => this.firms = firms,
+                  error => console.log(error));
     }
 }
