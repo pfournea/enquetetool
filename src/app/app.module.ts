@@ -9,8 +9,7 @@ import {FirmsPipe} from './firms.pipe';
 import {FirmDetailsComponent} from './firm-details/firm-details.component';
 import {routing} from './app.routing';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-
-
+import {FirmDetailsGuard} from "./firm-details/firm-details.guard";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     JsonpModule,
     routing
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},FirmDetailsGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

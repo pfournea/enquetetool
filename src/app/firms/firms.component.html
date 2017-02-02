@@ -19,7 +19,7 @@
     <td>{{firm.firmName}}</td>
     <td>{{firm.firmNumber}}</td>
     <td>{{firm.startDateFirm | date:'yyyy-MM-dd'}}</td>
-    <td><button class="btn" (click)="openDetail()">Details</button></td>
+    <td><button class="btn" (click)="openDetail(firm.firmNumber)">Details</button></td>
   </tr>
   </tbody>
 </table>
