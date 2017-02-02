@@ -19,9 +19,10 @@
       "mobile": false,
       "styles": [
         "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
         "../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
       ],
       "environments": {

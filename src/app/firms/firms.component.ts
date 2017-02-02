@@ -4,6 +4,7 @@ import  {Firm} from "./firm";
 import {FirmService} from "./firms.service";
 
 @Component({
+    moduleId: module.id,
     selector: 'app-firms',
     templateUrl: './firms.component.html',
     providers: [FirmService],
