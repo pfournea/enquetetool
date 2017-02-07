@@ -11,20 +11,27 @@
 <div>{{ 'app.hi' | translate }}</div>
 
 
-<table class="table">
+<table class="table table-striped" [mfData]="firms" #mf="mfDataTable" [mfRowsOnPage]="3">
   <thead>
-    <th>Firm Name</th>
+    <th><mfDefaultSorter by="firmName">Firm Name</mfDefaultSorter></th>
     <th>Firm Number</th>
     <th>Start date firm</th>
   </thead>
   <tbody>
-  <tr *ngFor="let firm of firms | filterPipe:filter">
+  <tr *ngFor="let firm of mf.data | filterPipe:filter">
     <td>{{firm.firmName}}</td>
     <td>{{firm.firmNumber}}</td>
     <td>{{firm.startDateFirm | date:'yyyy-MM-dd'}}</td>
     <td><button class="btn" (click)="openDetail(firm.firmNumber)">Details</button></td>
   </tr>
   </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">
+      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  </tfoot>
 </table>
 
 

@@ -12,6 +12,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {FirmDetailsGuard} from "./firm-details/firm-details.guard";
 import {TranslateModule, TranslateLoader} from "ng2-translate";
 import {createTranslateLoaderFactory} from "./translations/translations.translateloaderfactory";
+import {DataTableModule} from "angular2-datatable";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import {createTranslateLoaderFactory} from "./translations/translations.translat
     HttpModule,
     JsonpModule,
     routing,
+    DataTableModule,
     TranslateModule.forRoot(
       {
         provide: TranslateLoader,
