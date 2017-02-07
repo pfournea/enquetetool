@@ -10,19 +10,27 @@ import {FirmDetailsComponent} from './firm-details/firm-details.component';
 import {routing} from './app.routing';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {FirmDetailsGuard} from "./firm-details/firm-details.guard";
+import {TranslateModule, TranslateLoader} from "ng2-translate";
+import {createTranslateLoaderFactory} from "./translations/translations.translateloaderfactory";
 @NgModule({
   declarations: [
     AppComponent,
     FirmsComponent,
     FirmsPipe,
-    FirmDetailsComponent
+    FirmDetailsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     JsonpModule,
-    routing
+    routing,
+    TranslateModule.forRoot(
+      {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoaderFactory)
+      }
+    )
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},FirmDetailsGuard],
   bootstrap: [AppComponent]

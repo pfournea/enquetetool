@@ -5,8 +5,6 @@ import * as _ from 'lodash';
 @Injectable()
 export class FirmDetailsGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        console.log('****'+_.isNumber(route.params['id']));
-        console.log('firmDetails ' + route.params['id']);
         return true;
     }
 }

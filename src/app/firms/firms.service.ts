@@ -23,7 +23,6 @@ export class FirmService {
 
     extractData(response : Response) {
         let body = response.json();
-        body.forEach(t => console.log(t.firmNumber));
         return body || [];
     };
 

@@ -6,6 +6,11 @@
   </button>
 </div>
 
+<div [innerHTML]="'app.hi' | translate"></div>
+<div translate>app.hi</div>
+<div>{{ 'app.hi' | translate }}</div>
+
+
 <table class="table">
   <thead>
     <th>Firm Name</th>

@@ -13,7 +13,6 @@ export class FirmDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this._route.snapshot.params['id'];
-    console.log('id is '+this.id);
   }
 
 }
